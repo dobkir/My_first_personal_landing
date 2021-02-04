@@ -1,0 +1,414 @@
+html {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 0.67rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 68.7rem;
+    /*    max-width больше 67rem, т.к. педдинги уменьшают ширину контента*/
+    margin: 0 auto;
+    position: relative;
+    padding: 0 1rem;
+    /*без этих педдингов контент плилипает к краям страницы при ширине сайта меньше 1000px*/
+}
+
+/*Page
+====================*/
+
+.page {
+    width: 100%;
+    height: 100vh;
+    /*    vh - viewport height*/
+    min-height: 770px;/*Если человек войдет с экрана, высота которого меньше 770px, будет появляться вертикальная прокрутка экрана. Так не будет смещаться фотография автора, а footer не будет подниматься на content*/
+    position: relative;
+    overflow: hidden; /*overflow: hidden - всё, что выходит за пределы блока обрезается*/
+
+    background: #000 url('../img/bgd.jpg') center no-repeat;
+    background-size: cover;
+}
+
+/*Header
+====================*/
+
+.header {
+    /*    добавляем padding сверху и снизу по 1rem, слева и справа по 0*/
+    padding: 1rem 0;
+    margin-bottom: 110px;
+
+    background: #2B7DED;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    /*    чтобы все элементы флекс-бокс контейнера выровнялись по центру, укажем значение атрибута align-items: center*/
+    align-items: center;
+}
+
+
+.header-brand {
+    font-size: 1.6rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/*Убираем отступ по умолчанию тега img. Для этого превращаем его в блочный элемент*/
+.header-logo img {
+    display: block;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav-link {
+    /*    Сделали родительский header-nav флекс-бокс контейнером, теперь вводим margin-left, чтобы отделить элементы навигации друг-от-друга*/
+    margin-left: 1.5rem;
+
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+
+    transition: color .2s linear;
+}
+
+.header-nav-link:hover {
+    color: #99c5ed;
+}
+
+.header-nav-link.active {
+    position: relative;
+}
+
+/*линия под ссылкой навигации*/
+.header-nav-link.active::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+
+    background-color: #fff;
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+/*Content
+====================*/
+
+.content {
+    height: 100%;
+    width: 100%;
+    max-width: 37.67rem;
+}
+
+.content-header {
+    margin-bottom: 2.3rem;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, .6);
+}
+
+.title {
+    margin-bottom: 0.67rem;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.title span {
+    color: #2B7DED;
+}
+
+.text {
+    margin-bottom: 3.33rem;
+
+    font-size: 1rem;
+    color: #fff;
+}
+
+/*Btn
+====================*/
+
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+
+    /*    у тега button шрифт по-умолчанию, поэтому селектору btn его нужно присваивать отдельно*/
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.1;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+
+    /*    Присваиваем курсору значение "pointer", чтобы при наведении на кнопку с классом btn, у него стрелка превращалась в указательный палец*/
+    cursor: pointer;
+    /*    убираем бордер у селектора btn, потому что у тега button он есть по-умалчанию*/
+    border: 0;
+    background-color: #2B7DED;
+    border-radius: 5px;
+
+    transition: background .2s linear;
+}
+
+.btn:hover {
+    background-color: #1461cb;
+}
+
+/*Делаем кнопку на странице Contacts во всю ширину блока, для этого задаем соответсвующие параметры доп классу btn-full*/
+
+.btn-full {
+    display: block;
+    width: 100%;
+}
+
+/*Author
+====================*/
+
+.author {
+    position: absolute;
+
+    right: 3em;
+    top: 1em;
+}
+
+/*Footer
+====================*/
+
+.footer {
+    width: 100%;
+
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+}
+
+/*Contacts
+====================*/
+
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+.contacts-link {
+    margin-right: 2rem;
+
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contacts-link:last-child {
+    margin-right: 0;
+    /*    Убираем отступ справа у последнего флекс-элемента контактов*/
+    position: relative;
+}
+
+/* Стройим полоску после номера телефона, предварительно задав у селектора .contacts-link:last-child position: relative */
+
+.contacts-link:last-child::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    margin-left: 2rem;
+
+    background-color: #fff;
+    pointer-events: none;
+    /*запрещаем полоске вести себя как ссылка (а родитель - ссылка)*/
+    /*    Свойство pointer-events позволяет управлять тем, как элементы будут реагировать на события мыши или прикосновения к сенсорному экрану. Часто применяется для того, чтобы в сложной компоновке можно было взаимодействовать с нижележащими элементами, игнорируя вышележащие.*/
+
+    position: absolute;
+    left: 100%;
+    top: 0.7rem;
+}
+
+
+.contacts-link:hover {
+    text-decoration: underline;
+}
+
+.contacts-icon {
+    margin-right: 0.33rem;
+}
+
+/*Form
+====================*/
+
+.form {
+    width: 100%;
+    max-width: 280px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input,
+.textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+
+    font-family: inherit;
+    font-size: inherit;
+    color: #fff;
+
+    border: 0;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+}
+
+.textarea {
+    height: 100px;
+    resize: none;
+}
+
+/*Делаем цвет плейсхолдера также белым*/
+.input::placeholder,
+.textarea::placeholder {
+    color: #fff;
+}
+
+
+/*Media
+====================*/
+
+/*При ширине экрана меньше 1000px смещаем фотографию автора левее*/
+@media (max-width: 1000px) {
+    .author {
+        right: -60px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /*При ширине экрана меньше 768px скрываем фотографию автора*/
+     .author {
+        display: none;
+    }
+    
+    /*При ширине экрана меньше 768px высота страницы будет расчитываться по контенту, а не по высоте экрана. Минимальная высота блока page будет 100vh, но если контента больше, то и высота блока будет динамически больше*/
+    .page {
+        min-height: 100vh;
+        height: auto;
+        /*        чтобы контакты не прилипали к низу страницы при горизонтальном просмотре на мобильном устройстве*/
+        padding-bottom: 2rem;
+    }
+
+    /*При ширине экрана меньше 768px уменьшаем отступ снизу у шапки.*/
+    .header {
+        margin-bottom: 50px;
+    }
+
+    /*При ширине экрана меньше 768px скрываем логотип и уменьшаем размер шрифта бренда*/
+    .header-logo {
+        display: none;
+    }
+
+    .header-brand {
+        font-size: 1.2rem;
+    }
+
+    /* При ширине экрана меньше 768px чтобы контакты не налезали на контент, меняем тип позиционирования у footer и добавляем отступ снизу у контента*/
+    .content {
+        margin-bottom: 50px;
+        /*        При ширине экрана меньше 768px убираем ограничение по максимальной ширине блока контента. Текст размещаем по центру*/
+        max-width: none;
+        text-align: center;
+    }
+
+    /*    При ширине меньше 768px меняем позиционирование контактов с absolut на static, чтобы они не налезали на контент, а шли в потоке*/
+    .footer {
+        position: static;
+    }
+
+
+    /*    При ширине меньше 768px меняем у контактов расположение флекс-элементов во флекс-контейнере со строчного на колонной. Убираем отступ справа и снизу. Делаем отступ 0.5rem между контактами*/
+    .contacts {
+        flex-direction: column;
+    }
+
+    .contacts-link {
+        margin-right: 0;
+        margin-bottom: .5rem;
+    }
+
+    .contacts-link:last-child {
+        margin-bottom: 0;
+    }
+
+    /*При ширине экрана меньше 768px центрируем форму на экране*/
+    .form {
+        margin: 0 auto;
+    }
+    
+    /*При ширине экрана меньше 768px скрываем у контактов полоску справа*/
+    .contacts-link:last-child::after {
+        display: none;
+    }
+}
+
+
+@media (max-width: 565px) {
+
+    /*При ширине экрана меньше 566px опускаем навигацию ниже бренда и ее ширина становится во весь экран. Тоже самое с контактами.*/
+    .header-inner {
+        flex-direction: column;
+    }
+
+    .header-brand {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    
+/*    Уменьшаем размеры шрифтов для subtitle и title  у маленьких устройств*/
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+    }
+}
+
+
+

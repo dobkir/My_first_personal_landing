@@ -1,0 +1,2 @@
+[1201/184743.737:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\dobki\AppData\Roaming\Brackets\live-dev-profile\Crashpad\attachments\2d8267e3-8f09-4a54-a011-6c3d12e8e327: Системе не удается найти указанный путь. (0x3)
+[1201/185700.159:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)

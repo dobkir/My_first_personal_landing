@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--    Вводим метатег для адаптивной верстки-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="Personal website of a web developer Pavel Kirillov">
+    <meta name="keywords" content="web development, frontend, backend, building web pages">
+    <title>Personal Folio</title>
+</head>
+
+<body>
+    <div class="page">
+
+        <header class="header">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-brand">
+                        WEBDEVELOPER
+                    </div>
+                    <div class="header-logo">
+                        <img src="img/code.svg" alt="logo">
+                    </div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link" href="index.html">Home</a>
+                        <a class="header-nav-link" href="about.html">About me</a>
+                        <!--class active из ссылки home переносим в ссылку about, т.о. переносим линию под ссылкой "Home" под ссылку "About me"-->
+                        <a class="header-nav-link active" href="contacts.html">Contacts</a>
+                    </nav>
+                </div>
+                <!--/.header-inner-->
+            </div>
+            <!--/.container-->
+        </header>
+
+        <!--Main-->
+        <div class="container">
+            <main class="content">
+                <div class="content-header">
+                    <h1 class="title">Write me a <span>message</span></h1>
+                    <div class="text">
+                        <p>
+                            Many desktop publishing packages and web page editors now use Lorem
+                        </p>
+                    </div>
+                </div>
+                <!--/.content-header (чтобы создать общий отступ снизу обоих заголовков)-->
+
+                <form class="form" action="/" method="post">
+                    <div class="form-group">
+                        <input class="input" type="text" name="name" placeholder="Name">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="input" type="email" name="email" placeholder="E-mail">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="input" type="tel" name="tel" placeholder="Phone">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="textarea" name="text" placeholder="Message"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-full" type="submit">Send message</button>
+                    </div>
+                </form>
+
+            </main>
+            <!--/.content-->
+            <img class="author" src="img/My_foto.png" alt="">
+        </div>
+        <!--/.container-->
+
+        <!--Footer-->
+        <footer class="footer">
+            <div class="container">
+                <div class="contacts">
+                    <a class="contacts-link" href="mailto:info@pavel@gmail.com">
+                        <img class="contacts-icon" src="img/mail.svg" alt="">dobkir@gmail.com</a>
+                    <a class="contacts-link" href="tel:+79991723022">
+                        <img class="contacts-icon" src="img/phone.svg" alt="">+7(999)172-30-22</a>
+                </div>
+            </div>
+            <!--/.container-->
+        </footer>
+
+    </div>
+    <!--/.page-->
+</body>
+
+</html>
